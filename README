@@ -1,4 +1,6 @@
 Flow Pilots Cross Platform Mobile development workshop
 ===
 
-Only a .gitignore to see here
+Toodoos is a basic cross-platform Todo application.
+
+At the moment we only have a PCL Core, but it runs on all mobile platforms!
