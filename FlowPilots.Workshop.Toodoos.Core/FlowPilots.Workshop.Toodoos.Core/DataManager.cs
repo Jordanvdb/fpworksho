@@ -9,7 +9,7 @@ namespace FlowPilots.Workshop.Toodoos.Core
         {
         }
 
-        public List<Todo> GetAllTasks()
+        public List<Todo> GetAllTodos()
         {
             return new List<Todo>
             {
