@@ -8,9 +8,9 @@ using System.Linq;
 
 namespace FlowPilots.Workshop.Toodoos.Touch
 {
-    public partial class FlowPilots_Workshop_Toodoos_TouchViewController : UIViewController
+    public partial class TodoListTableViewController : UIViewController
     {
-        public FlowPilots_Workshop_Toodoos_TouchViewController(IntPtr handle)
+        public TodoListTableViewController(IntPtr handle)
             : base(handle)
         {
         }
@@ -21,13 +21,20 @@ namespace FlowPilots.Workshop.Toodoos.Touch
         {
             base.ViewDidLoad();
 
-            TodoList.Source = new TodoSource();
+            TodoList.Source = new TodoSource(this);
         }
 
         #endregion
 
         public class TodoSource : UITableViewSource
         {
+            TodoListTableViewController controller;
+
+            public TodoSource (TodoListTableViewController controller)
+            {
+                this.controller = controller;
+            }
+
             public override int RowsInSection(UITableView tableview, int section)
             {
                 return DataManager.GetAllTodos().Count;
@@ -41,6 +48,18 @@ namespace FlowPilots.Workshop.Toodoos.Touch
                 label.Text = DataManager.GetAllTodos().ElementAt(indexPath.Row).Name;
 
                 return cell;
+            }
+
+            public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+            {
+                var detailViewController = UIStoryboard.FromName("MainStoryboard", null).InstantiateViewController("DetailViewController") as DetailViewController;
+
+                var currentTodo = DataManager.GetAllTodos().ElementAt(indexPath.Row);
+
+                detailViewController.CurrentTodo = currentTodo;
+
+                controller.PresentViewController(detailViewController, true, null);
+
             }
         }
     }

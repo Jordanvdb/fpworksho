@@ -12,7 +12,7 @@ using System.CodeDom.Compiler;
 namespace FlowPilots.Workshop.Toodoos.Touch
 {
 	[Register ("FlowPilots_Workshop_Toodoos_TouchViewController")]
-	partial class FlowPilots_Workshop_Toodoos_TouchViewController
+	partial class TodoListTableViewController
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
