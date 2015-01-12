@@ -3,13 +3,9 @@ using System.Collections.Generic;
 
 namespace FlowPilots.Workshop.Toodoos.Core
 {
-    public class DataManager
+    public static class DataManager
     {
-        public DataManager()
-        {
-        }
-
-        public List<Todo> GetAllTodos()
+        public static List<Todo> GetAllTodos()
         {
             return new List<Todo>
             {

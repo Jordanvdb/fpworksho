@@ -12,10 +12,9 @@ namespace FlowPilots.Workshop.Toodoos.Tests
         public void TestTodoCount()
         {
             // Arrange
-            var dataManager = new DataManager();
 
             // Act
-            var todos = dataManager.GetAllTodos();
+            var todos = DataManager.GetAllTodos();
 
             // Assert
             Assert.AreEqual(3, todos.Count);
@@ -25,10 +24,9 @@ namespace FlowPilots.Workshop.Toodoos.Tests
         public void TestFirstTodo()
         {
             // Arrange
-            var dataManager = new DataManager ();
 
             // Act
-            var firstTodoName = dataManager.GetAllTodos().First().Name;
+            var firstTodoName = DataManager.GetAllTodos().First().Name;
 
            // Assert
             Assert.AreEqual("Unit test", firstTodoName);
