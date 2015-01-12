@@ -86,4 +86,7 @@ Global
 		{EB72B8AB-DEF8-4B41-87C6-643B02B76F37}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{EB72B8AB-DEF8-4B41-87C6-643B02B76F37}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FlowPilots.Workshop.Toodoos.Droid\FlowPilots.Workshop.Toodoos.Droid.csproj
+	EndGlobalSection
 EndGlobal
