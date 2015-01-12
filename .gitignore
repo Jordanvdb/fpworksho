@@ -1,0 +1,17 @@
+.DS_Store
+*~
+*.userprefs
+*.pidb
+bin
+obj
+
+*.nupkg
+nuspec/*.dll
+nuspec/*.mdb
+
+packages/*
+packages/repositories.config
+
+Libraries/Droid/19.1.0
+
+TestResult.xml
