@@ -40,4 +40,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlowPilots.Workshop.Toodoos.Core\FlowPilots.Workshop.Toodoos.Core.csproj">
+      <Project>{67FA0CC9-3E12-40FF-9AB9-03A87E8CDD54}</Project>
+      <Name>FlowPilots.Workshop.Toodoos.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
