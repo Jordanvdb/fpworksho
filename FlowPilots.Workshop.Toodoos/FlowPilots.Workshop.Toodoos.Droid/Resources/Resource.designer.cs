@@ -61,7 +61,7 @@ namespace FlowPilots.Workshop.Toodoos.Droid
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int myButton = 2131034112;
+			public const int myList = 2131034112;
 			
 			static Id()
 			{

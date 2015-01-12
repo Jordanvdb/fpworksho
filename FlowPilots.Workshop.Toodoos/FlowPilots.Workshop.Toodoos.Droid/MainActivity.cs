@@ -6,29 +6,24 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FlowPilots.Workshop.Toodoos.Core;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace FlowPilots.Workshop.Toodoos.Droid
 {
     [Activity(Label = "FlowPilots.Workshop.Toodoos.Droid", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : Activity
+    public class MainActivity : ListActivity
     {
-        int count = 1;
+        string[] todos;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            todos = DataManager.GetAllTodos().Select(todo => todo.Name ).ToArray();
+            ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, todos);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
-            
-            button.Click += delegate
-            {
-                button.Text = string.Format("{0} clicks!", count++);
-            };
         }
     }
 }
